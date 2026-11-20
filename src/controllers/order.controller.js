@@ -246,6 +246,9 @@ const getOrderStatus = catchAsync(async (req, res) => {
   if (order.orderStatus === "cancelled") throw new ApiError(httpStatus.NOT_FOUND, "訂單已被取消");
 
   if (["qfpay"].includes(order.payment.paymentType)) {
+    // test
+    if(order.orderStatus === 'confirmed') return res.send(order);
+
     const status = await transactionEnquiry(order);
     if (status === "success") {
       order = await orderService.updateOrderById(order.id, { "payment.paymentStatus" : "completed", orderStatus : "confirmed" });

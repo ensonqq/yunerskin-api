@@ -77,14 +77,14 @@ const updateOrder = {
   body : Joi.object()
             .keys({
               email              : Joi.string(),
-              recipient          : Joi.string(),
+              recipient          : Joi.string().allow(null, ""),
               phone              : Joi.string(),
-              area               : Joi.string(),
-              district           : Joi.string(),
-              subDistrict        : Joi.string(),
-              deliveryDay        : Joi.string(),
-              deliveryTimeSlot   : Joi.string(),
-              fullAddress        : Joi.string(),
+              area               : Joi.string().allow(null, "").valid(...Object.keys(locations)),
+              district           : Joi.string().allow(null, "").valid(...Object.keys({ ...locations.hk, ...locations.kln, ...locations.nt })),
+              subDistrict        : Joi.string().allow(null, "").valid(..._.flatten(_.map(locations, _.values))),
+              deliveryDay        : Joi.string().allow(null, ""),
+              deliveryTimeSlot   : Joi.string().allow(null, ""),
+              fullAddress        : Joi.string().allow(null, ""),
               items              : Joi.array().items({
                 product   : Joi.string().custom(objectId),
                 quantity  : Joi.number().positive(),
@@ -99,7 +99,7 @@ const updateOrder = {
               }),
               createdBy          : Joi.string().custom(objectId),
               orderStatus        : Joi.string().valid('pending_payment', 'payment_failed', 'confirmed', 'cancelled'),
-              deliveryType       : Joi.string(),
+              deliveryType       : Joi.string().allow(null, ""),
               pickupLocationCode : Joi.string().allow(null),
               printed            : Joi.boolean(),
               remarks            : Joi.string().allow("")

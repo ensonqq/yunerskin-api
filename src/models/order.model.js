@@ -173,7 +173,7 @@ scheme.pre("save", function(next) {
     // get the next sequence
     sequence.next(function(nextSeq) {
       const date = dateStringInHongKong(); //20220101
-      doc.orderNumber = "BBQ" + date + nextSeq.toString().padStart(5, "0"); //OPT2022010100001
+      doc.orderNumber = "YU" + date + nextSeq.toString().padStart(5, "0"); //OPT2022010100001
       return next();
     });
   }

@@ -168,7 +168,7 @@ const receiptHtml = function(order) {
             如是會員可登入<a href="https://yunerksin.com.hk/dashboard/OrderList" target="_blank" rel="noopener">我的帳戶-訂單紀錄</a> 查看訂單情況。
           </p>
           <p style="color: #aaa;">
-            若有任何查詢，請與 <a href="https://wa.me/+85229446860" target="_blank" rel="noopener">我們聯絡(Whatsapp)</a>，或瀏覽 <a href="https://yunerksin.com.hk/service/QNA">常見問題</a> 以得到快速協助。
+            所有療程請於14天內完成預約，<a href="http://wa.me/+85291783286?text=%E4%BD%A0%E5%A5%BD%E6%88%91%E5%B7%B2%E8%B3%BC%E8%B2%B7%E7%99%82%E7%A8%8B%E9%9C%80%E8%A6%81%E9%A0%90%E7%B4%84%E6%99%82%E9%96%93%EF%BC%8C%E8%A8%82%E5%96%AE%E8%99%9F${order.orderNumber}" target="_blank" rel="noopener">按此立即開始預約你的療程</a>
           </p>
           <!-- Footer -->
           <footer style="font-size: 10px; text-align: center; margin-top: 50px; /* You can make it with position try it */ color: #aaa">此為系統自動發送，請不要回覆此電郵。</footer>
